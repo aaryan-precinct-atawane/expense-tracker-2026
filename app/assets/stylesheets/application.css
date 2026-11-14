@@ -101,3 +101,24 @@ button {
     gap: 10px;
   }
 }
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-container input[type="text"] {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  min-width: 250px;
+}
+
+.search-container input[type="submit"] {
+  border: none;
+  cursor: pointer;
+}

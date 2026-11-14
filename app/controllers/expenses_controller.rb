@@ -2,9 +2,23 @@ class ExpensesController < ApplicationController
   before_action :set_expense, only: %i[ show edit update destroy ]
 
   # GET /expenses or /expenses.json
-  def index
-    @expenses = Expense.all
+
+
+def index
+  @query = params[:query]
+
+  @expenses = Expense.order(date: :desc)
+
+  if @query.present?
+    search_term = "%#{Expense.sanitize_sql_like(@query)}%"
+
+    @expenses = @expenses.where(
+      "title LIKE :term OR category LIKE :term",
+      term: search_term
+    )
   end
+end
+
 
   # GET /expenses/1 or /expenses/1.json
   def show
