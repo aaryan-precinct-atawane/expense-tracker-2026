@@ -1,24 +1,121 @@
-/* General styling */
+/* =========================================
+   1. GLOBAL STYLING
+========================================= */
+
 * {
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #eef2f7;
-  margin: 0;
-  padding: 40px;
-  color: #1e293b;
+html {
+  min-height: 100%;
 }
 
-/* Main dashboard */
-.dashboard {
-  display: block;
-  max-width: 1000px;
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #424242, #252525, #111111);
+  background-attachment: fixed;
+  color: #f1f5f9;
+  margin: 0;
+  padding: 30px;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #93c5fd;
+}
+
+/* =========================================
+   2. NAVIGATION BAR
+========================================= */
+
+.navbar {
+  background: #1c1c1c;
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 16px 25px;
+  margin-bottom: 35px;
+}
+
+.navbar-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: #60a5fa;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.navbar-links a {
+  color: #d1d5db;
+  font-weight: 600;
+}
+
+.navbar-links a:hover {
+  color: #60a5fa;
+}
+
+.navbar-links .navbar-button {
+  background: #2563eb;
+  color: white;
+  padding: 10px 17px;
+  border-radius: 8px;
+}
+
+/* =========================================
+   3. MAIN DASHBOARD
+========================================= */
+
+.dashboard,
+.container,
+.page-content {
+  max-width: 1100px;
   margin: 30px auto;
 }
 
-/* Dashboard statistics */
+h1, h2, h3 {
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 23px;
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 17px;
+}
+
+p {
+  color: #cbd5e1;
+}
+
+/* =========================================
+   4. STATISTICS CARDS
+========================================= */
+
 .stats-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -26,13 +123,29 @@ body {
   margin: 30px 0;
 }
 
-.stat-card {
-  background: white;
+.stat-card,
+.card {
+  background: #292929;
   padding: 25px;
-  border-radius: 10px;
+  border: 1px solid #454545;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Recent expenses */
+.stat-card h3 {
+  color: #cbd5e1;
+}
+
+.stat-card p {
+  color: #60a5fa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* =========================================
+   5. EXPENSE LIST
+========================================= */
+
 .expenses-list {
   margin: 20px 0;
 }
@@ -41,66 +154,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
+  gap: 15px;
+  background: #292929;
   padding: 18px;
   margin-bottom: 12px;
-  border-radius: 8px;
+  border: 1px solid #454545;
+  border-radius: 10px;
 }
 
 .expense-item p {
-  color: #777;
-  margin-bottom: 0;
+  color: #a1a1aa;
+  margin: 4px 0;
 }
 
-/* Buttons */
-.primary-button,
-.secondary-button {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  margin: 10px 10px 10px 0;
-}
-
-.primary-button {
-  background-color: #2563eb;
-  color: white;
-}
-
-.primary-button:hover {
-  background-color: #1d4ed8;
-  color: white;
-}
-
-.secondary-button {
-  background-color: #e5e7eb;
-  color: #222;
-}
-
-button {
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 600px) {
-  body {
-    padding: 15px;
-  }
-
-  .stats-container {
-    grid-template-columns: 1fr;
-  }
-
-  .expense-item {
-    gap: 10px;
-  }
-}
+/* =========================================
+   6. SEARCH BAR
+========================================= */
 
 .search-container {
   display: flex;
@@ -110,15 +179,206 @@ button {
   flex-wrap: wrap;
 }
 
-.search-container input[type="text"] {
-  padding: 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  font-size: 15px;
-  min-width: 250px;
+/* =========================================
+   7. FORMS AND INPUTS
+========================================= */
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  max-width: 100%;
 }
 
-.search-container input[type="submit"] {
-  border: none;
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: #333333;
+  color: #ffffff;
+  border: 1px solid #555555;
+  border-radius: 8px;
+  font-size: 15px;
+  margin: 5px 0 15px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a1a1aa;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #2563eb;
+  border-color: #60a5fa;
+}
+
+label {
+  display: block;
+  color: #e2e8f0;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* =========================================
+   8. BUTTONS
+========================================= */
+
+button,
+input[type="submit"],
+.primary-button,
+.secondary-button {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
+  text-align: center;
+  transition: 0.2s ease;
+}
+
+button,
+input[type="submit"],
+.primary-button {
+  background: #2563eb;
+  color: white;
+  border: 1px solid #2563eb;
+}
+
+button:hover,
+input[type="submit"]:hover,
+.primary-button:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: white;
+}
+
+.secondary-button {
+  background: #333333;
+  color: white;
+  border: 1px solid #555555;
+}
+
+.secondary-button:hover {
+  background: #454545;
+  color: white;
+}
+
+/* =========================================
+   9. EXPENSE TABLE
+========================================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #292929;
+  color: #f1f5f9;
+  border: 1px solid #454545;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #454545;
+}
+
+th {
+  background: #383838;
+  color: white;
+}
+
+td {
+  color: #e5e7eb;
+}
+
+tr:hover td {
+  background: #333333;
+}
+
+/* =========================================
+   10. NOTICES AND ERRORS
+========================================= */
+
+.notice {
+  background: #14532d;
+  color: #bbf7d0;
+  border: 1px solid #166534;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.alert,
+#error_explanation {
+  background: #450a0a;
+  color: #fecaca;
+  border: 1px solid #991b1b;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* =========================================
+   11. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 15px;
+  }
+
+  .navbar {
+    padding: 15px;
+  }
+
+  .navbar-container {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .navbar-links {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .dashboard,
+  .container,
+  .page-content {
+    margin: 15px auto;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+
+  .expense-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .search-container {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  th,
+  td {
+    padding: 9px;
+  }
 }
